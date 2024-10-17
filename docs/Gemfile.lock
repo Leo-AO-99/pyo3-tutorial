@@ -176,7 +176,7 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.3.4)
   jekyll-feed (~> 0.12)
-  just-the-docs (~> 0.10.0)
+  just-the-docs
 
 BUNDLED WITH
    2.5.22
