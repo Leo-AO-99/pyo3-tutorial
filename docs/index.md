@@ -15,8 +15,8 @@ os: macos, M3, 14.1.1
 
 reference:
 
-- https://pyo3.rs
+- [pyo3 official docs](https://pyo3.rs)
 
-- https://github.com/ijl/orjson
+- [orjson](https://github.com/ijl/orjson)
 
-- https://github.com/pola-rs/polars
+- [polars](https://github.com/pola-rs/polars)

@@ -12,6 +12,8 @@ python虚拟环境: conda
 
 当前使用的pyo3版本：0.22.5
 
+因为pyo3还在早期版本，可能随时有大更新，尽量做到定期更新
+
 ## 在此之前
 
 如果使用mac环境，要修改`~/.cargo/config.toml`，添加
@@ -48,6 +50,14 @@ cd <target_dir>
 maturin init
 ```
 
+这步会直接生成Github Actions的CI文件，`.github/workflows/CI.yml`，当把代码push到github后，会自动执行CI，生成轮子
+
+调用如下命令行就可以直接安装轮子
+
+```bash
+pip install git+https://github.com/Leo-AO-99/pyo3-tutorial@main
+```
+
 完成后
 
 ```file
@@ -70,7 +80,6 @@ fn pyo3_tutorial(m: &Bound<'_, PyModule>) -> PyResult<()> {
     Ok(())
 }
 
-
 #[pyfunction]
 fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
     Ok((a + b).to_string())
@@ -79,7 +88,7 @@ fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
 
 具体解释会在后续章节中讲解，但是可以很容易看出sum_as_string的作用，将两个数字相加，然后返回字符串
 
-接着执行，以及每次修改后都要执行该命令，会把编译后的库安装在当前的python环境中
+接着执行，以及每次修改后都要执行该命令，会把编译后的库安装在当前的python环境中，后续不再赘述
 
 ```bash
 maturin develop
